@@ -7,8 +7,7 @@ const container = document.querySelector('.container');
 const gridDisplay = document.querySelector('.grid-display');
 const gridPicker = document.querySelector('#grid-picker');
 
-let gridSize = 16;
-gridDisplay.textContent = `${gridSize} x ${gridSize}`
+
 
 function generateGrid(gridSize) {
     for (let x = 0; x < gridSize; x++) {
@@ -35,7 +34,12 @@ function generateGrid(gridSize) {
 })
 }
 
-generateGrid(gridSize) // Original grid
+generateGrid(16) // Original grid
+gridDisplay.textContent = `${gridPicker.value} x ${gridPicker.value}` // Original value
+
+function gridDisplayValue(value) {
+    gridDisplay.textContent = `${gridPicker.value} x ${gridPicker.value}`
+}
 
 gridPicker.addEventListener('change', () => {
     gridSize = Number(gridPicker.value);
