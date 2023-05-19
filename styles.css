@@ -16,21 +16,21 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-self: center;
-    max-width: 75%;
     border: 5px solid black;
+    height: 500px;
+    width: 500px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 .square {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     /* border: 0.1vw solid black; */
     margin: 0px;
-    padding: 15px;
 }
 
 .options {

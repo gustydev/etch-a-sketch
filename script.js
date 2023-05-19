@@ -7,8 +7,6 @@ const container = document.querySelector('.container');
 const gridDisplay = document.querySelector('.grid-display');
 const gridPicker = document.querySelector('#grid-picker');
 
-
-
 function generateGrid(gridSize) {
     for (let x = 0; x < gridSize; x++) {
         const row = document.createElement('div');
