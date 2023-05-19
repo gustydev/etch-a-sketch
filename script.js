@@ -34,6 +34,10 @@ buttons.forEach((button) => {
             currentMode = 'gray'
         } else if (button.id == 'eraser') {
             currentMode = 'eraser'
+        } else if (button.id == 'delete') {
+            squares.forEach((square) => {
+                square.style.backgroundColor = 'white';
+            })
         }
     })
 })
