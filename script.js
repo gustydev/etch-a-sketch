@@ -16,13 +16,13 @@ for (let x = 0; x < gridSize; x++) {
 let currentMode = 'normal' // Default mode is normal, other modes are rainbow, gray scale etc
 
 const rainbowPicker = document.querySelector('#rainbow-pick');
-
-function randomRGB() {
-    return 0 + Math.floor(Math.random() * (255 - 0 + 1));
-}
-
 const grayScale = document.querySelector('#gray-scale');
 const eraser = document.querySelector('#eraser');
+const colorPicker = document.querySelector('#color-picker');
+
+colorPicker.addEventListener('click', () => {
+    currentMode = 'normal';
+})
 
 const buttons = document.querySelectorAll('button');
 
@@ -38,14 +38,20 @@ buttons.forEach((button) => {
     })
 })
 
+function randomRGB() {
+    return 0 + Math.floor(Math.random() * (255 - 0 + 1));
+}
+
 const squares = document.querySelectorAll('.square');
 
 squares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
         if (currentMode == 'normal') {
-            square.style.backgroundColor = 'black'
+            square.style.backgroundColor = colorPicker.value;
         } else if (currentMode == 'rainbow') {
-            square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`
+            square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+        } else if (currentMode = 'eraser') {
+            square.style.backgroundColor = 'white';
         }
     })
 })
