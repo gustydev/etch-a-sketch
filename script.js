@@ -13,7 +13,7 @@ for (let x = 0; x < gridSize; x++) {
     container.appendChild(row);
 }
 
-let pickedColor = 'black' // Default color if nothing is picked
+let currentMode = 'normal' // Default mode is normal, other modes are rainbow, gray scale etc
 
 const rainbowPicker = document.querySelector('#rainbow-pick');
 
@@ -27,17 +27,25 @@ const eraser = document.querySelector('#eraser');
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-    if (button.id == 'rainbow-pick') {
-        button.addEventListener('click', () => {
-            pickedColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
-        })
-    }
+    button.addEventListener('click', () => {
+        if (button.id == 'rainbow-pick') {
+            currentMode = 'rainbow'
+        } else if (button.id == 'gray-scale') {
+            currentMode = 'gray'
+        } else if (button.id == 'eraser') {
+            currentMode = 'eraser'
+        }
+    })
 })
 
 const squares = document.querySelectorAll('.square');
 
 squares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
-        square.style.backgroundColor = pickedColor;
+        if (currentMode == 'normal') {
+            square.style.backgroundColor = 'black'
+        } else if (currentMode == 'rainbow') {
+            square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`
+        }
     })
 })
