@@ -46,3 +46,14 @@ body {
     align-items: center;
     gap: 6px;
 }
+
+.footer {
+    margin-top: 48px;
+    display: flex;
+    gap: 4px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
