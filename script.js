@@ -20,10 +20,6 @@ const eraser = document.querySelector('#eraser');
 const colorPicker = document.querySelector('#color-picker');
 const colorMode = document.querySelector('#color-mode')
 
-colorPicker.addEventListener('click', () => {
-    currentMode = 'normal';
-})
-
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
