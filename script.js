@@ -64,6 +64,7 @@ buttons.forEach((button) => {
         } else if (button.id == 'eraser') {
             currentMode = 'eraser';
         } else if (button.id == 'delete') {
+            const squares = document.querySelectorAll('.square');
             squares.forEach((square) => {
                 square.style.backgroundColor = 'white';
             })
