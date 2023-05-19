@@ -13,10 +13,31 @@ for (let x = 0; x < gridSize; x++) {
     container.appendChild(row);
 }
 
+let pickedColor = 'black' // Default color if nothing is picked
+
+const rainbowPicker = document.querySelector('#rainbow-pick');
+
+function randomRGB() {
+    return 0 + Math.floor(Math.random() * (255 - 0 + 1));
+}
+
+const grayScale = document.querySelector('#gray-scale');
+const eraser = document.querySelector('#eraser');
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    if (button.id == 'rainbow-pick') {
+        button.addEventListener('click', () => {
+            pickedColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+        })
+    }
+})
+
 const squares = document.querySelectorAll('.square');
 
 squares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
-        square.style.backgroundColor = 'black';
+        square.style.backgroundColor = pickedColor;
     })
 })
