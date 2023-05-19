@@ -37,18 +37,13 @@ gridDisplay.textContent = `${gridPicker.value} x ${gridPicker.value}` // Origina
 
 function gridDisplayValue(value) {
     gridDisplay.textContent = `${gridPicker.value} x ${gridPicker.value}`
-}
-
-gridPicker.addEventListener('change', () => {
     gridSize = Number(gridPicker.value);
-    gridDisplay.textContent = `${gridSize} x ${gridSize}`;
     const rows = document.querySelectorAll('.row')
-    console.log(rows)
     rows.forEach((row) => {
         row.remove()
     })
     generateGrid(gridSize);
-})
+}
 
 let currentMode = 'normal' // Default mode
 
