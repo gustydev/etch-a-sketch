@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     align-self: center;
     max-width: 75%;
+    border: 5px solid black;
 }
 
 .row {
@@ -24,7 +25,16 @@ body {
 
 .square {
     flex: 0 0 auto;
-    border: 0.1vw solid black;
+    /* border: 0.1vw solid black; */
     margin: 0px;
     padding: 15px;
+}
+
+.options {
+    margin-top: 24px;
+    display: flex;
+    gap: 10px;
+}
+.color-picker {
+    
 }
