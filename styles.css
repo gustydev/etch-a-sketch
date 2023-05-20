@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container {
@@ -29,8 +30,11 @@ body {
 
 .square {
     flex: 1 1 auto;
-    border: 0.1vw solid gray;
     margin: 0px;
+}
+
+.line {
+    border: 0.1vw solid gray;
 }
 
 .options {
@@ -56,4 +60,17 @@ body {
 .footer a {
     text-decoration: none;
     color: black;
+}
+
+.line-check {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.config {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }

@@ -13,7 +13,7 @@ function generateGrid(gridSize) {
         row.classList.add('row');
         for (let y = 0; y < gridSize; y++) {
             const square = document.createElement('div');
-            square.classList.add('square');
+            square.classList.add('square', 'line');
             row.appendChild(square);
         }
         container.appendChild(row);
@@ -67,6 +67,15 @@ buttons.forEach((button) => {
             })
         } else if (button.id == 'color-mode') {
             currentMode = 'normal';
+        } else if (button.id == 'line-check') {
+            const squares = document.querySelectorAll('.square');
+            squares.forEach((square) => {
+                if (!(square.classList.contains('line'))) {
+                    square.classList.add('line');
+                } else {
+                    square.classList.remove('line');
+                }
+            })
         }
     })
 })
