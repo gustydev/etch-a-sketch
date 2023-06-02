@@ -8,23 +8,25 @@
     <title>Lousa Mágica</title>
 </head>
 <body>
-    <h1>Lousa Mágica</h1>
-    <div class="container" ondragstart="return false;" ondrop="return false;">
-    </div>
-    <div class="options">
-        <input type="color" id="color-picker">
-        <button id="color-mode">Modo cor</button>
-        <button id="rainbow-pick">Modo arco-íris</button>
-        <button id="eraser">Borracha</button>
-        <button id="delete">Apagar quadro</button>
-    </div>
-    <div class="config">
-        <div class="grid-selector">
-            <div class="grid-display"></div>
-            <input type="range" id="grid-picker" value="16" min="1" max="100" oninput="gridDisplayValue(this.value)">
+    <div class="main">
+        <h1>Lousa Mágica</h1>
+        <div class="container" ondragstart="return false;" ondrop="return false;">
         </div>
-        <div class="line-check">
-            <button id="line-check">Mostrar/ocultar linhas</button>
+        <div class="options">
+            <input type="color" id="color-picker">
+            <button id="color-mode">Modo cor</button>
+            <button id="rainbow-pick">Modo arco-íris</button>
+            <button id="eraser">Borracha</button>
+            <button id="delete">Apagar quadro</button>
+        </div>
+        <div class="config">
+            <div class="grid-selector">
+                <div class="grid-display"></div>
+                <input type="range" id="grid-picker" value="16" min="1" max="100" oninput="gridDisplayValue(this.value)">
+            </div>
+            <div class="line-check">
+                <button id="line-check">Mostrar/ocultar linhas</button>
+            </div>
         </div>
     </div>
     <div class="footer">
