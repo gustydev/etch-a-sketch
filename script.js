@@ -11,11 +11,9 @@ function generateGrid(gridSize) {
     for (let x = 0; x < gridSize; x++) {
         const row = document.createElement('div');
         row.classList.add('row');
-        row.setAttribute('draggable', 'false');
         for (let y = 0; y < gridSize; y++) {
             const square = document.createElement('div');
             square.classList.add('square', 'line');
-            square.setAttribute('draggable', 'false');
             row.appendChild(square);
         }
         container.appendChild(row);
