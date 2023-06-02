@@ -20,14 +20,22 @@ function generateGrid(gridSize) {
     }    
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
-        square.addEventListener('mouseenter', () => {
-           if (currentMode == 'normal') {
-              square.style.backgroundColor = colorPicker.value;
-          } else if (currentMode == 'rainbow') {
-               square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
-          } else if (currentMode = 'eraser') {
-               square.style.backgroundColor = 'white';
-         }
+        function addColor() {
+            if (currentMode === 'normal') {
+                square.style.backgroundColor = colorPicker.value;
+            } else if (currentMode === 'rainbow') {
+                 square.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+            } else if (currentMode === 'eraser') {
+                 square.style.backgroundColor = 'white';
+           }
+        }
+        square.addEventListener('mouseover', (e) => {
+            if (e.buttons === 1) { // If mouse button is held down
+                addColor();
+            }
+        square.addEventListener('mousedown', () => {
+            addColor();
+        })
      })
 })
 }
