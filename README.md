@@ -1,4 +1,2 @@
-# lousa-magica
-Lousa Mágica versão web
-
-Projeto Etch-a-Sketch do The Odin Project
+# Etch-a-sketch
+Web version of an etch-a-sketch.
