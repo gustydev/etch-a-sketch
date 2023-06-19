@@ -87,3 +87,7 @@ buttons.forEach((button) => {
         }
     })
 })
+
+colorPicker.addEventListener('input', () => {
+    gridPicker.style['accent-color'] = colorPicker.value;
+})
