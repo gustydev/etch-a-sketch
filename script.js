@@ -7,13 +7,18 @@ const container = document.querySelector('.container');
 const gridDisplay = document.querySelector('.grid-display');
 const gridPicker = document.querySelector('#grid-picker');
 
+let gridLines = 'on';
+
 function generateGrid(gridSize) {
     for (let x = 0; x < gridSize; x++) {
         const row = document.createElement('div');
         row.classList.add('row');
         for (let y = 0; y < gridSize; y++) {
             const square = document.createElement('div');
-            square.classList.add('square', 'line');
+            square.classList.add('square');
+            if (gridLines == 'on') {
+                square.classList.add('line');
+            }
             row.appendChild(square);
         }
         container.appendChild(row);
@@ -80,8 +85,10 @@ buttons.forEach((button) => {
             squares.forEach((square) => {
                 if (!(square.classList.contains('line'))) {
                     square.classList.add('line');
+                    gridLines = 'on'
                 } else {
                     square.classList.remove('line');
+                    gridLines = 'off';
                 }
             })
         }
