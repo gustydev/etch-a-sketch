@@ -65,10 +65,32 @@ const eraser = document.querySelector('#eraser');
 const colorPicker = document.querySelector('#color-picker');
 const colorMode = document.querySelector('#color-mode')
 
+let pickedColor = 'black' // Default
+
+colorPicker.addEventListener('input', () => {
+    pickedColor = colorPicker.value;
+    gridPicker.style['accent-color'] = pickedColor;
+    if (currentMode == 'normal') { // If mode is active
+        colorMode.style = `border-color: ${pickedColor}`
+    }
+})
+
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        if (!(button.id == 'delete' || button.id == 'line-check')) {
+            buttons.forEach((button) => {
+                button.style = 'all: revert;'
+            })
+            if (button.id == 'rainbow-pick') {
+                button.style = 'border-color: black; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%); border-image-slice: 1;'
+            } else if (button.id == 'color-mode') {
+                button.style = `border-color: ${pickedColor};`;
+            } else {
+                button.style = 'border-color: black;'
+            }
+        } 
         if (button.id == 'rainbow-pick') {
             currentMode = 'rainbow';
         } else if (button.id == 'eraser') {
@@ -93,8 +115,4 @@ buttons.forEach((button) => {
             })
         }
     })
-})
-
-colorPicker.addEventListener('input', () => {
-    gridPicker.style['accent-color'] = colorPicker.value;
 })
