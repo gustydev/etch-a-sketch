@@ -65,7 +65,9 @@ const eraser = document.querySelector('#eraser');
 const colorPicker = document.querySelector('#color-picker');
 const colorMode = document.querySelector('#color-mode')
 
-let pickedColor = 'black' // Default
+let pickedColor = colorPicker.value; // Default
+colorMode.style['border-color'] = pickedColor; // Default color
+gridPicker.style['accent-color'] = pickedColor;
 
 colorPicker.addEventListener('input', () => {
     pickedColor = colorPicker.value;
